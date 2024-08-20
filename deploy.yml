@@ -1,0 +1,32 @@
+name: Deploy Discord Bot
+
+on:
+  push:
+    branches:
+      - main  # Chạy workflow khi có push vào nhánh main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Chọn phiên bản Python phù hợp
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run the bot
+      env:
+        TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        GUILD_ID: ${{ secrets.GUILD_ID }}
+        WELCOME_CHANNEL_ID: ${{ secrets.WELCOME_CHANNEL_ID }}
+      run: |
+        python bot.py
