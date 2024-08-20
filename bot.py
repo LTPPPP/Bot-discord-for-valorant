@@ -38,7 +38,7 @@ async def list(ctx):
 
 @bot.command()
 async def thele(ctx):
-    thele_link = "https://docs.google.com/document/d/1q4-N1CoKzg1P49aXt-8Qjh-uTC30Mljm1EX6qfPCwW0/edit?usp=sharing"  # Thay thế bằng đường link thực tế
+    thele_link = ""  # Thay thế bằng đường link thực tế
     await ctx.send(f'Thể lệ: {thele_link}')
 
 @bot.event
