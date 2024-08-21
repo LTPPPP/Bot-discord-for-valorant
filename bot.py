@@ -26,4 +26,3 @@ class MyBot(commands.Bot):
             logging.error(f"Forbidden error during sync: {e}")
         except Exception as e:
             logging.error(f"Unknown error during sync: {e}")
-
