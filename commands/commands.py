@@ -34,7 +34,7 @@ def setup_commands(bot):
     # thele command
     @bot.tree.command(name="thele", description="Hiển thị link thể lệ")
     async def thele(interaction: discord.Interaction):
-        thele_link = "https://docs.google.com/document/d/1q4-N1CoKzg1P49aXt-8Qjh-uTC30Mljm1EX6qfPCwW0/edit?usp=sharing"
+        thele_link = ""
         await interaction.response.send_message(f'Thể lệ: {thele_link}')
 
     # rand command
